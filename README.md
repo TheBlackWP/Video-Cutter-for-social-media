@@ -8,10 +8,10 @@ library Requirements:
 
 Source Code:
 
-from tkinter import messagebox
-from tkinter import filedialog
-from tkinter import *
-from moviepy.video.io.VideoFileClip import VideoFileClip
+    from tkinter import messagebox
+    from tkinter import filedialog
+    from tkinter import *
+    from moviepy.video.io.VideoFileClip import VideoFileClip
 
 # Function to select the input video file.
     def select_input_file():
