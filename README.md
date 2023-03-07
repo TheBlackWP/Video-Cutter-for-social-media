@@ -14,21 +14,21 @@ from tkinter import *
 from moviepy.video.io.VideoFileClip import VideoFileClip
 
 # Function to select the input video file.
-def select_input_file():
-    file_path = filedialog.askopenfilename()
-    input_file_entry.delete(0, END)
-    input_file_entry.insert(0, file_path)
+    def select_input_file():
+        file_path = filedialog.askopenfilename()
+        input_file_entry.delete(0, END)
+        input_file_entry.insert(0, file_path)
 
 # Function to select the output directory of the fragments.
-def select_output_directory():
-    directory_path = filedialog.askdirectory()
-    output_directory_entry.delete(0, END)
-    output_directory_entry.insert(0, directory_path)
+    def select_output_directory():
+        directory_path = filedialog.askdirectory()
+        output_directory_entry.delete(0, END)
+        output_directory_entry.insert(0, directory_path)
 
 # Function to divide the video into fragments of 29 seconds.
-def split_video():
-    input_file_path = input_file_entry.get()
-    output_directory_path = output_directory_entry.get()
+    def split_video():
+        input_file_path = input_file_entry.get()
+        output_directory_path = output_directory_entry.get()
 
     # Open the video that you want to split into fragments
     clip = VideoFileClip(input_file_path)
@@ -67,26 +67,26 @@ def split_video():
     messagebox.showinfo("División de video", "El video se ha dividido en fragmentos de 29 segundos.")
 
 # Create the application window.
-root = Tk()
-root.title("Dividir video en fragmentos de 29 segundos")
+    root = Tk()
+    root.title("Dividir video en fragmentos de 29 segundos")
 
 # Create the user interface elements.
-input_file_label = Label(root, text="Ruta del archivo de video de entrada:")
-input_file_label.pack()
-input_file_entry = Entry(root)
-input_file_entry.pack()
-input_file_button = Button(root, text="Seleccionar archivo de video", command=select_input_file)
-input_file_button.pack()
+    input_file_label = Label(root, text="Ruta del archivo de video de entrada:")
+    input_file_label.pack()
+    input_file_entry = Entry(root)
+    input_file_entry.pack()
+    input_file_button = Button(root, text="Seleccionar archivo de video", command=select_input_file)
+    input_file_button.pack()
 
-output_directory_label = Label(root, text="Ruta del directorio de salida:")
-output_directory_label.pack()
-output_directory_entry = Entry(root)
-output_directory_entry.pack()
-output_directory_button = Button(root, text="Seleccionar directorio de salida", command=select_output_directory)
-output_directory_button.pack()
+    output_directory_label = Label(root, text="Ruta del directorio de salida:")
+    output_directory_label.pack()
+    output_directory_entry = Entry(root)
+    output_directory_entry.pack()
+    output_directory_button = Button(root, text="Seleccionar directorio de salida", command=select_output_directory)
+    output_directory_button.pack()
 
-split_button = Button(root, text="Dividir video", command=split_video)
-split_button.pack()
+    split_button = Button(root, text="Dividir video", command=split_video)
+    split_button.pack()
 
 # Launch the application window.
-root.mainloop()
+    root.mainloop()
